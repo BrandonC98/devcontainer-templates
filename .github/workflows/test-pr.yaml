@@ -12,7 +12,8 @@ jobs:
         id: filter
         with:
           filters: |
-            neovim: ./**/neovim/**
+            color: ./**/color/**
+            hello: ./**/hello/**
 
   test:
     needs: [detect-changes]
