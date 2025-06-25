@@ -18,5 +18,6 @@ runs:
 
     - name: Test template
       id: test_template
+      needs: [build_template]
       shell: bash
       run: ${{ github.action_path }}/test.sh  ${{ inputs.template }}
