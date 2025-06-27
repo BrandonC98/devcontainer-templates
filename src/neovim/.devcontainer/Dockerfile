@@ -40,6 +40,6 @@ RUN if [ "${NVIM_CONFIG}" != "none" ]; then   \
     fi
 
 # Set the version of nvim
-RUN if [ "${NVIM_VERSION}}" != "none" ]; then   \
+RUN if [ "${NVIM_VERSION}" != "none" ]; then   \
         bob use ${NVIM_VERSION}; \
     fi
