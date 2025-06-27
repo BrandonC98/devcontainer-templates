@@ -3,7 +3,7 @@ ARG UBUNTU_VERSION="${templateOption:imageVariant}"
 FROM rust:bullseye AS builder
 
 RUN rustup update && cargo install --locked zellij
-RUN rustup update && cargo install bob-nvim
+RUN rustup update && cargo install --locked bob-nvim
 
 FROM buildpack-deps:${UBUNTU_VERSION}-curl
 ARG USERNAME="${templateOption:user}"
