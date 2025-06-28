@@ -13,8 +13,6 @@ jobs:
         with:
           filters: |
             neovim: ./**/neovim/**
-            hello: ./**/hello/**
-            color: ./**/color/**
 
   test:
     needs: [detect-changes]
