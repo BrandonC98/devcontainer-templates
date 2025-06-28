@@ -1,0 +1,55 @@
+{
+    "id": "neovim",
+    "version": "0.1.0",
+    "name": "neovim",
+    "description": "Tooling for running neovim",
+    "documentationURL": "https://github.com/brandonC98/devcontainer-templates/tree/main/src/neovim",
+    "licenseURL": "https://github.com/brandonC98/devcontainer-templates/blob/main/LICENSE",
+    "options": {
+        "imageVariant": {
+            "type": "string",
+            "description": "Ubuntu version. Version numbers or names(e.g. jammy, noble) can be used.",
+            "proposals": [
+                "24.04",
+                "24.10",
+                "25.04"
+            ],
+            "default": "24.04"
+        },
+        "user": {
+            "type": "string",
+            "description": "Container user. Some tooling will be installed in this user directory so the username needs to be selected for this. Ubuntu is the default user in this container",
+            "proposals": [
+                "ubuntu",
+                "vscode",
+                "devcontainer"
+            ],
+            "default": "ubuntu"
+        },
+        "neovimConfig": {
+            "type": "string",
+            "description": "Neovim Configuration repository to use. Custom configurations can be used but currently priavate repositories can't be used. Use https clone urls not ssh",
+            "proposals": [
+                "https://github.com/LazyVim/LazyVim.git",
+                "https://github.com/nvim-lua/kickstart.nvim.git",
+                "none"
+            ],
+            "default": "none"
+        },
+        "neovimVersion": {
+            "type": "string",
+            "description": "Version of Neovim to install. Neovim versions can be changed by using bob",
+            "proposals": [
+                "stable",
+                "latest",
+                "0.10.0",
+                "nightly",
+                "none"
+            ],
+            "default": "stable"
+        }
+    },
+    "platforms": [
+        "ubuntu"
+    ]
+}
