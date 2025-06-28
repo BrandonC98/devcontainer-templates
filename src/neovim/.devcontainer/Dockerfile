@@ -28,6 +28,7 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
 
 # Create the user if they don't exist
 RUN id -u ${USERNAME} 2>/dev/null || useradd -ms /bin/bash ${USERNAME}
+RUN id -nG ${USERNAME} | grep -qw sudo || sudo usermod -aG sudo ${USERNAME}
 USER ${USERNAME}
 
 COPY --from=builder /usr/local/cargo/bin/bob /usr/local/bin/
